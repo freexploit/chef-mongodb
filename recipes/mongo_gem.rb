@@ -16,8 +16,8 @@ package sasldev_pkg do
   action :nothing
 end.run_action(:install)
 
-node['mongodb']['ruby_gems'].each do |gem, version|
-  chef_gem gem do
-    version version
-  end
+chef_gem 'mongo' do
+  compile_time true
+  version '1.12.0'
+  action :install
 end
