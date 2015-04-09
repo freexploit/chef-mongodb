@@ -1,5 +1,8 @@
-chef_gem 'mongo'
-include_recipe "mongodb::mongo_gem"
+chef_gem 'mongo' do
+  compile_time false
+  version '1.12.0'
+  action :install
+end
 
 users = []
 admin = node['mongodb']['admin']
