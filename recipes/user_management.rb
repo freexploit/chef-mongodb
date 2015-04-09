@@ -1,5 +1,8 @@
+chef_gem 'bson' do
+  version '1.12.0'
+  action :install
+end
 chef_gem 'mongo' do
-  compile_time true
   version '1.12.0'
   action :install
 end
