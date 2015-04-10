@@ -1,5 +1,5 @@
-chef_gem 'bson' do
-  version '1.12.0'
+chef_gem 'bson_ext' do
+  version '1.12.1'
   action :install
 end
 chef_gem 'mongo' do
