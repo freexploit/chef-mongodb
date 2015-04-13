@@ -19,7 +19,9 @@ users.concat(node['mongodb']['users'])
 # Add each user specified in attributes
 users.each do |user|
   mongodb_user user['username'] do
+    Chef::Log.warn(user['username'])
     password user['password']
+    Chef::Log.warn(user['password'])
     roles user['roles']
     database user['database']
     connection node['mongodb']
