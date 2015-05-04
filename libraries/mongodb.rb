@@ -332,7 +332,7 @@ class Chef::ResourceDefinitionList::MongoDB
     rescue Mongo::ConnectionFailure => ex
       retries += 1
       raise ex if retries > max_retries
-      sleep(0.5)
+      sleep(2)
       retry
     end
   end
