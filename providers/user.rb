@@ -6,9 +6,14 @@ def add_user(username, password, roles = [], database)
   require 'rubygems'
   require 'mongo'
 
-  connection = retrieve_db
-  admin = connection.db('admin')
-  db = connection.db(database)
+  begin
+    connection = retrieve_db
+    admin = connection.db('admin')
+    db = connection.db(database)
+  rescue Mongo::ConnectionFailure => e
+    Chef::Log.info(" im here ")
+    Chef::Log.info("#{e}")
+  end
 
   # Check if user is admin / admin, and warn that this should
   # be overridden to unique values
