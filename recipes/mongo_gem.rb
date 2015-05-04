@@ -18,6 +18,6 @@ end.run_action(:install)
 
 chef_gem 'mongo' do
   compile_time true
-  version '1.12.0'
+  version '1.12.1'
   action :install
 end
