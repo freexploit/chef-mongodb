@@ -325,7 +325,7 @@ class Chef::ResourceDefinitionList::MongoDB
   end
 
   # Ensure retry upon failure
-  def self.rescue_connection_failure(max_retries = 30)
+  def self.rescue_connection_failure(max_retries = 60)
     retries = 0
     begin
       yield
